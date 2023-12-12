@@ -1,54 +1,50 @@
-package practice_24;
-
 import java.util.HashMap;
-import java.util.Map;
 
+public class OrderManager {
+  HashMap<Integer, Object> orderHashMap = new HashMap<>();
+  HashMap<String, Object> orderHashMap1 = new HashMap<>();
 
-public class OrderManager { //2
+  public void add(Order o, int table) throws OrderAlreadyException {
+    String str = String.join(",", o.getDishes());
+    if (orderHashMap.containsKey(table))
+      throw new OrderAlreadyException(table);
+    else
+      orderHashMap.put(table, str);
+  }
 
+  public Object getOrder(int table) {
+    return orderHashMap.get(table);
+  }
 
-    private Map<String, Order> orders;
+  public void add(Dish dish, int table) throws OrderAlreadyException {
+    if (orderHashMap.containsKey(table))
+      throw new OrderAlreadyException(table);
+    else
+      orderHashMap.put(table, dish);
+  }
 
-    public OrderManager() {
-        orders = new HashMap<>();
-    }
+  public void removeOrder(int table) {
+    orderHashMap.remove(table);
+  }
 
-    public void addOrder(String address, Order order) {
-        orders.put(address, order);
-    }
+  public HashMap orders() {
+    return orderHashMap;
+  }
 
-    public Order getOrder(String address) {
-        return orders.get(address);
-    }
+  public void add(Order o, String address) {
+    String str = String.join(",", o.getDishes());
+    orderHashMap1.put(address, str);
+  }
 
-    public void removeOrder(String address) {
-        orders.remove(address);
-    }
+  public Object getOrder(String address) {
+    return orderHashMap1.get(address);
+  }
 
-    public void addItemToOrder(String address, Item item) {
-        Order order = orders.get(address);
-        if (order != null) {
-            order.addItem(item);
-        }
-    }
+  public void removeOrderInternet(String address) {
+    orderHashMap1.remove(address);
+  }
 
-    public Order[] getInternetOrders() {
-        return orders.values().toArray(new Order[0]);
-    }
-
-    public double getTotalPriceOfInternetOrders() {
-        double totalPrice = 0;
-        for (Order order : orders.values()) {
-            totalPrice += order.getTotalPrice();
-        }
-        return totalPrice;
-    }
-
-    public int getTotalItemCountOfDish(String dishName) {
-        int totalCount = 0;
-        for (Order order : orders.values()) {
-            totalCount += order.getCount(dishName);
-        }
-        return totalCount;
-    }
+  public HashMap getInternetOrder() {
+    return orderHashMap1;
+  }
 }

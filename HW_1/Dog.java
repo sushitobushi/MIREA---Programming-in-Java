@@ -1,16 +1,14 @@
-import java.lang.*;
-
 public class Dog {
     private String name;
     private int age;
 
-    public Dog(String n,int a) {
+    public Dog(String n, int a) {
         name = n;
         age = a;
     }
 
     public Dog(String n) {
-        name = "Didi";
+        name = n;
         age = 1;
     }
 
@@ -18,7 +16,7 @@ public class Dog {
         this.age = age;
     }
 
-    public String getName(String name) {
+    public String getName() {
         return name;
     }
 
@@ -31,6 +29,6 @@ public class Dog {
     }
 
     public void intoHumanAge() {
-        System.out.println(name + "'s age in human is " + age*7 + " years.");
+        System.out.println(name + "'s age in human is " + age * 7 + " years.");
     }
 }

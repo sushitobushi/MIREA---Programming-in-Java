@@ -20,7 +20,7 @@ public class Main {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                ImageIcon imageIcon = new ImageIcon("C:\\Users\\shibu\\Pictures\\jesus.jpeg");
+                ImageIcon imageIcon = new ImageIcon("C:\\Users\\shibu\\Downloads\\dead.jpeg");
                 Image image = imageIcon.getImage();
                 g.drawImage(image, 0, 0, this);
             }

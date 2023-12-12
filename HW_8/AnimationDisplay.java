@@ -6,9 +6,9 @@ public class AnimationDisplay {
     private static final int FRAME_HEIGHT = 600; // Высота окна
     private static final int DELAY = 1000; // Задержка между кадрами (в миллисекундах)
     private static final String[] IMAGE_PATHS = {
-            "C:\\Users\\shibu\\Pictures\\jesus.jpeg",
-            "C:\\Users\\shibu\\Pictures\\darkness.jpeg",
-            "C:\\Users\\shibu\\Pictures\\skull.jpeg"
+            "C:\\\\Users\\\\shibu\\\\Downloads\\\\dead.jpeg",
+            "C:\\\\Users\\\\shibu\\\\Downloads\\\\dead.jpeg",
+            "C:\\\\Users\\\\shibu\\\\Downloads\\\\dead.jpeg"
     }; // Путь к изображениям кадров анимации
 
     private int currentFrameIndex = 0;
